@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "API REST do sistema Ki Gostoso",
   "main": "src/server.js",
+  "engines": { "node": ">=20.0.0" },
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",

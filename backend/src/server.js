@@ -10,8 +10,24 @@ const adminRoutes = require('./routes/adminRoutes');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
-app.use(cors());
+// CORS — aceita localhost em desenvolvimento
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:4173',
+].filter(Boolean);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -27,7 +43,7 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Ki Gostoso API rodando!' });
 });
 
-// Error handler
+// Tratamento de erros
 app.use((err, req, res, next) => {
   console.error(err.stack);
   if (err.message && err.message.includes('Tipo de arquivo')) {
