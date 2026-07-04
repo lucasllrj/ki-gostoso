@@ -30,15 +30,13 @@ export default function HomePage() {
         <div className="bg-primary-container rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-10 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 2px, transparent 2px)', backgroundSize: '24px 24px' }} />
           <div className="relative z-10 flex-1 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full border border-white/30">
-              <span className="material-symbols-outlined text-white text-sm filled">star</span>
-              <span className="text-white font-bold text-xs uppercase tracking-wider">O Sabor Mais Amado</span>
-            </div>
+
             <h1 className="font-heading font-extrabold text-white text-4xl md:text-6xl leading-tight" style={{ letterSpacing: '-0.02em' }}>
               Sabor que aquece o coração!
             </h1>
             <p className="text-white/90 text-lg max-w-lg">
-              Bem-vindo à cozinha do Chef Capivara. Aqui, cada salgado e doce é feito com o carinho de uma receita de família.
+              Bem-vindo à cozinha do Chef Capy!<br />
+              Aqui, cada salgado e doce é feito com o carinho de uma receita de família.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link to="/cardapio" className="bg-white text-primary-container font-heading font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 active:scale-95">
@@ -51,9 +49,7 @@ export default function HomePage() {
           </div>
           <div className="relative z-10 w-full md:w-[400px] aspect-square group flex-shrink-0">
             <img src={MASCOT_IMG} alt="Chef Capivara" className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105" />
-            <div className="absolute -bottom-4 -right-4 bg-secondary-container p-4 rounded-2xl shadow-xl border-4 border-white rotate-12">
-              <p className="font-heading font-bold text-on-secondary-container text-sm leading-tight text-center">Chef's<br />Choice!</p>
-            </div>
+
           </div>
         </div>
       </section>
@@ -110,9 +106,9 @@ export default function HomePage() {
             <img src={MASCOT_IMG} alt="Chef Capivara" className="w-full h-full object-contain" />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <h4 className="font-heading font-bold text-xl text-on-primary-container mb-2">Dica do Chef Capivara</h4>
+            <h4 className="font-heading font-bold text-xl text-on-primary-container mb-2">Dica do Chef Capy</h4>
             <p className="text-on-primary-fixed-variant italic">
-              "Já experimentou nosso combo de Coxinha + Suco Natural? É o lanche perfeito para qualquer hora do dia! 🧡"
+              "Visite-nos em nosso restaurante. Será um prazer lhe atender! 🧡🧡🧡"
             </p>
           </div>
         </div>
