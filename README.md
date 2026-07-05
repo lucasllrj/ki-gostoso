@@ -1,6 +1,6 @@
-# 🍗 Ki Gostoso — Sistema de Pedidos Online
+# 🍗 Ki Gostoso: Sistema de Pedidos Online
 
-Sistema completo de pedidos online para o restaurante Ki Gostoso, com cardápio digital, carrinho de compras, checkout com validação de CEP, e painel administrativo.
+Sistema de pedidos online para o restaurante ficctício Ki Gostoso, com cardápio digital, carrinho de compras, checkout com validação de endereço por CEP e painel administrativo.
 
 ## 🛠️ Tecnologias
 
