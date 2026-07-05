@@ -11,7 +11,7 @@ export default function MenuPage() {
   const activeCat = searchParams.get('cat') || '';
 
   useEffect(() => {
-    getCategories().then((res) => setCategories(res.data)).catch(console.error);
+    getCategories().then((res) => setCategories(Array.isArray(res.data) ? res.data : [])).catch(console.error);
   }, []);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function MenuPage() {
     const params = {};
     if (activeCat) params.categoria_id = activeCat;
     getProducts(params)
-      .then((res) => setProducts(res.data))
+      .then((res) => setProducts(Array.isArray(res.data) ? res.data : []))
       .catch(console.error)
       .finally(() => setLoading(false));
   }, [activeCat]);

@@ -22,7 +22,7 @@ export default function ProductDetailPage() {
         setProduct(res.data);
         return getProducts({ categoria_id: res.data.categoria_id });
       })
-      .then((res) => setRelated(res.data.filter((p) => p.id !== parseInt(id)).slice(0, 4)))
+      .then((res) => setRelated((Array.isArray(res.data) ? res.data : []).filter((p) => p.id !== parseInt(id)).slice(0, 4)))
       .catch(console.error)
       .finally(() => setLoading(false));
   }, [id]);

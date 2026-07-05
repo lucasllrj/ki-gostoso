@@ -18,7 +18,7 @@ export default function HomePage() {
 
   useEffect(() => {
     getProducts({ destaque: true })
-      .then((res) => setFeatured(res.data))
+      .then((res) => setFeatured(Array.isArray(res.data) ? res.data : []))
       .catch(console.error)
       .finally(() => setLoading(false));
   }, []);
