@@ -64,11 +64,11 @@ npx vite
 - ✅ Validação de entrega apenas para Salvador com mensagem informativa em caso de erro
 - ✅ Máscara de telefone no formato (xx) x xxxx-xxxx
 - ✅ Pagamento na entrega (Dinheiro, Crédito, Débito)
-- ✅ Confirmação de pedido com tempo estimado
+- ✅ Confirmação de pedido 
 
 ### Administrador
 - ✅ Login seguro com JWT
-- ✅ Gestão de pedidos (Novo → Em Preparo → Pronto → Entregue)
+- ✅ Gestão de pedidos 
 - ✅ Gestão do cardápio (adicionar, editar, ativar/desativar, excluir produtos)
 - ✅ Upload de imagens de produtos
 
