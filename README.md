@@ -79,9 +79,9 @@ ki-gostoso/
 ├── backend/
 │   ├── src/
 │   │   ├── config/        # Configuração do banco
-│   │   ├── controllers/   # Lógica dos endpoints
-│   │   ├── middleware/     # Auth JWT e upload
-│   │   ├── models/        # Modelos Sequelize
+│   │   ├── controllers/   # Lógica das operações
+│   │   ├── middleware/     # Funções intermediárias: Auth JWT e upload
+│   │   ├── models/        # Modelos Sequelize / Dados do sistema
 │   │   ├── routes/        # Rotas da API
 │   │   └── seeds/         # Dados iniciais
 │   └── uploads/           # Imagens de produtos
