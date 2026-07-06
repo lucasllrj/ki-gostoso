@@ -88,7 +88,7 @@ ki-gostoso/
 ├── frontend/
 │   └── src/
 │       ├── components/    # Componentes reutilizáveis
-│       ├── context/       # CartContext e AuthContext
+│       ├── context/       # Estados globais, CartContext e AuthContext
 │       ├── pages/         # Páginas da aplicação
 │       └── services/      # Chamadas API
 └── README.md
