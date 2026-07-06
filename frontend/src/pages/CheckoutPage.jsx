@@ -32,17 +32,25 @@ export default function CheckoutPage() {
     const clean = cep.replace(/\D/g, '');
     if (clean.length === 8) {
       setCepLoading(true);
+      setCepError('');
       try {
         const res = await fetchCep(clean);
-        if (res.data.erro) { setCepError('CEP não encontrado'); return; }
-        set('endereco_rua', res.data.logradouro || '');
-        set('endereco_bairro', res.data.bairro || '');
-        set('endereco_cidade', res.data.localidade || '');
-        if (res.data.localidade !== 'Salvador') {
+        if (res.data.erro) {
+          setCepError('CEP não encontrado');
+          set('endereco_rua', '');
+          set('endereco_bairro', '');
+          set('endereco_cidade', '');
+        } else if (res.data.localidade !== 'Salvador') {
           setCepError(`Desculpe! O CEP informado pertence a ${res.data.localidade}/${res.data.uf}. No momento, realizamos entregas somente para Salvador/BA.`);
+          set('endereco_rua', res.data.logradouro || '');
+          set('endereco_bairro', res.data.bairro || '');
+          set('endereco_cidade', res.data.localidade || '');
         } else {
           setCepError('');
           setError('');
+          set('endereco_rua', res.data.logradouro || '');
+          set('endereco_bairro', res.data.bairro || '');
+          set('endereco_cidade', res.data.localidade || '');
         }
       } catch { setCepError('Erro ao buscar CEP. Verifique e tente novamente.'); }
       finally { setCepLoading(false); }

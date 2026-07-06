@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getProducts, getCategories } from '../services/api';
 import ProductCard from '../components/ProductCard';
 
-const MASCOT_IMG = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC2oMBIrsTpopbz5S6RwxSXb3SLb45y55ybwy-MMnWrgHLJAiIBKRheflbUmIeETvXVi1fXUoC9pJZg1QATLF71Bl_Y9HqUTSUrew7fyqcmub7Tqs0aHUJY45ftvgetI9vbV3yXdOf00qQ096qXhtLkaseRSvV33OqV_7RmjzTn0AcjrRpswcE8MNkAqV870LluGWk2IDCwyeOzvyQ5iSjgh_U5v-L6SVdzN1ffwwtDLrtLp6T1kN5WeuoiaZ0b-NGpCYjqIHeGUpA-';
+const MASCOT_IMG = '/mascote.png';
 
 const catCards = [
   { id: 1, nome: 'Salgados', icon: 'bakery_dining', bg: 'bg-orange-50', text: 'text-orange-700', sub: 'Coxinha, Rissole & mais', blob: 'bg-orange-200' },
