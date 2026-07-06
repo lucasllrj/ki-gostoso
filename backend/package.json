@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "API REST do sistema Ki Gostoso",
   "main": "src/server.js",
-  "engines": { "node": ">=20.0.0" },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "seed": "node src/seeds/seed.js"
+    "seed": "node src/seeds/seed.js",
+    "db:seed": "node src/seeds/seed.js",
+    "db:reset": "node src/seeds/seed.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
