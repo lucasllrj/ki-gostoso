@@ -27,20 +27,26 @@ export default function CheckoutPage() {
     return `(${d.slice(0,2)}) ${d.slice(2,3)} ${d.slice(3,7)}-${d.slice(7)}`;
   };
 
-  const handleCep = async (cep) => {
-    set('endereco_cep', cep);
-    const clean = cep.replace(/\D/g, '');
-    // Limpa o erro e os campos assim que o usuário começa a editar
+  const maskCep = (v) => {
+    const d = v.replace(/\D/g, '').slice(0, 8);
+    if (d.length <= 5) return d;
+    return `${d.slice(0, 5)}-${d.slice(5)}`;
+  };
+
+  const handleCep = async (rawValue) => {
+    const masked = maskCep(rawValue);
+    set('endereco_cep', masked);
+    const clean = masked.replace(/\D/g, '');
+    // Limpa o erro SEMPRE que o usuário digita, antes de qualquer verificação
+    setCepError('');
     if (clean.length < 8) {
-      setCepError('');
       set('endereco_rua', '');
       set('endereco_bairro', '');
       set('endereco_cidade', '');
       return;
     }
-    // Busca somente quando completa 8 dígitos
+    // Busca ao completar 8 dígitos
     setCepLoading(true);
-    setCepError('');
     try {
       const res = await fetchCep(clean);
       if (res.data.erro) {
@@ -54,7 +60,6 @@ export default function CheckoutPage() {
         set('endereco_bairro', res.data.bairro || '');
         set('endereco_cidade', res.data.localidade || '');
       } else {
-        setCepError('');
         setError('');
         set('endereco_rua', res.data.logradouro || '');
         set('endereco_bairro', res.data.bairro || '');
@@ -117,7 +122,7 @@ export default function CheckoutPage() {
             <h3 className="font-heading font-bold text-lg flex items-center gap-2"><span className="material-symbols-outlined text-primary-container">location_on</span>Endereço de Entrega</h3>
             <div className="flex gap-4">
               <div className="relative flex-1">
-                <input value={form.endereco_cep} onChange={(e) => handleCep(e.target.value)} placeholder="CEP *" maxLength={9} className="w-full bg-surface-container-low rounded-xl px-4 py-3 border-none focus:ring-2 focus:ring-primary-container" required />
+                <input value={form.endereco_cep} onChange={(e) => handleCep(e.target.value)} placeholder="XXXXX-XXX" maxLength={9} className="w-full bg-surface-container-low rounded-xl px-4 py-3 border-none focus:ring-2 focus:ring-primary-container" required />
                 {cepLoading && <div className="absolute right-3 top-3 w-5 h-5 border-2 border-orange-200 border-t-primary-container rounded-full animate-spin" />}
               </div>
               <input value={form.endereco_cidade} readOnly placeholder="Cidade" className="flex-1 bg-surface-container-high rounded-xl px-4 py-3 border-none text-gray-500" />
