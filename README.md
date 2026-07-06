@@ -1,8 +1,8 @@
-# 🍗 Ki Gostoso: Sistema de Pedidos Online
+#  Ki Gostoso: Sistema de Pedidos Online
 
 Sistema de pedidos online para o restaurante ficctício Ki Gostoso, com cardápio digital, carrinho de compras, checkout com validação de endereço por CEP e painel administrativo.
 
-## 🛠️ Tecnologias
+## Estrutura
 
 - **Frontend:** React 18 + Vite + TailwindCSS
 - **Backend:** Node.js + Express
@@ -10,7 +10,7 @@ Sistema de pedidos online para o restaurante ficctício Ki Gostoso, com cardápi
 - **Autenticação:** JWT
 - **API Externa:** ViaCEP (preenchimento automático de endereço)
 
-## 🚀 Como Rodar
+## Como rodar
 
 ### Pré-requisitos
 - [Node.js](https://nodejs.org/) instalado (versão 18+)
