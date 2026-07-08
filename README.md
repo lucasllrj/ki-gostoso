@@ -27,7 +27,7 @@ cd ki-gostoso
 
 ```bash
 # Backend
-cd ../backend
+cd /backend
 npm install
 
 # Frontend
